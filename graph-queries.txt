@@ -1,0 +1,72 @@
+mutation{
+  createEvent(eventInput: {title:"Another",description:"Next Test",price: 2.44,date:"2019-12-03T23:09:33.600Z"}){
+	title
+  }
+}
+
+query {
+	events{
+    title
+    creator{
+      email
+    }
+  }
+}
+
+
+///The 7 lesson
+query {
+	events{
+    title
+    creator{
+      email
+      createdEvents{
+          title
+      }
+    }
+  }
+}
+
+
+query {
+	events{
+    title
+    creator{
+      email
+    }
+  }
+}
+
+
+
+
+
+
+
+mutation{
+  bookEvent(eventId:"5de6e128ab4e2a0e941ee3b7"){
+	_id
+    createdAt
+  }
+}
+
+mutation{
+  cancelBooking(bookingId:"5de6e128ab4e2a0e941ee3b7"){
+    title
+    creator{
+      email
+    }
+  }
+}
+
+query{
+  bookings{
+    createdAt
+    event{
+      title
+      creator{
+        email
+      }
+    }
+  }
+}
